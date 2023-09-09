@@ -4,23 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      main {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        align-items: center;
-        width: 100%;
-      }
-
-      .chichiImage {
-        width: 50px;
-      }
-
-      .myGithubUrl {
-        text-decoration: none;
-      }
-    </style>
+   <link rel="stylesheet" href="index.css">
   </head>
 
   <body>
@@ -48,28 +32,6 @@
       </p>
     </main>
 
-    <script>
-      let Current_dayOfweek = document.querySelector(".day-of-week");
-      let Current_UTCTime = document.querySelector(".utc-time");
-
-      const days_OfTheWeek = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ];
-
-      const currentDay = new Date().getDay();
-      const dayOfTheWeek = `Current Day Of The Week: ${days_OfTheWeek[currentDay]}`;
-      // console.log(dayOfTheWeek)
-      Current_dayOfweek.textContent = dayOfTheWeek;
-
-      const currentUTCTime = new Date().getTime();
-      // console.log(currentUTCTime);
-      Current_UTCTime.textContent = `Current UTC Time: ${currentUTCTime}`;
-    </script>
+    <script src="index.js"></script>
   </body>
 </html>
