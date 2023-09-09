@@ -42,34 +42,37 @@
       <p class="" data-testId="myTrack">Track: Front End Web Development</p>
       <p data-testId="githubURL">
         GithubURL:
-        <a class="myGithubUrl" href="github.com/Shezcute09"
+        <a class="myGithubUrl" href="https://github.com/Shezcute09"
           >github.com/Shezcute09</a
         >
       </p>
     </main>
 
     <script>
-      let Current_dayOfweek = document.querySelector(".day-of-week");
-      let Current_UTCTime = document.querySelector(".utc-time");
+      function updateTimeUTC() {
+        let Current_dayOfweek = document.querySelector('[data-testId="currentDayOfWeek"]');
+        let Current_UTCTime = document.querySelector('[data-testId="currentUTCTime"]');
 
-      const days_OfTheWeek = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ];
+        const current = new Date();
 
-      const currentDay = new Date().getDay();
-      const dayOfTheWeek = `Current Day Of The Week: ${days_OfTheWeek[currentDay]}`;
-      // console.log(dayOfTheWeek)
-      Current_dayOfweek.textContent = dayOfTheWeek;
+        const days_OfTheWeek = [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ];
 
-      const currentUTCTime = new Date().getTime();
-      // console.log(currentUTCTime);
-      Current_UTCTime.textContent = `Current UTC Time: ${currentUTCTime}`;
+        const currentDay = days_OfTheWeek[current.getDay()];
+        const timeOfTheDay = current.toLocaleTimeString();
+
+        Current_dayOfweek.textContent = `Today is ${currentDay}`;
+        Current_UTCTime.textContent = `Current time is ${timeOfTheDay}`;
+      }
+      setInterval(updateTimeUTC, 1000);
+      updateTimeUTC();
     </script>
   </body>
 </html>
