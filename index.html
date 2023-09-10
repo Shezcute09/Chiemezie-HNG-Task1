@@ -3,36 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-   <link rel="stylesheet" href="index.css">
+    <title>Front-End Page Task 1</title>
+    <link rel="stylesheet" href="index.css" />
   </head>
 
   <body>
-    <main>
-      <p class="" data-testId="Chiemezie">
-        Chiemezie 
-      </p>
-      <div class="img-container">
-        <span>Slack Display Picture:</span>
-        <img
-          class="chichiImage"
-          data-testId="slackDisplayImage"
-          alt="chiemezie"
-          src="chichi.jpg"
-        />
+    <div class="container">
+      <h1 data-testid="slackUserName">Chiemezie</h1>
+      <img data-testid="slackDisplayImage" src="./chichi.jpg" alt="chiemezie" />
+      <div class="clock">
+        <p data-testid="currentDayOfTheWeek"></p>
+        <p data-testid="currentUTCTime"></p>
       </div>
-      <p class="day-of-week" data-testId="currentDayOfWeek"></p>
-      <p class="utc-time" data-testId="currentUTCTime"></p>
-      <p class="" data-testId="myTrack">FrontEnd</p>
-      <p data-testId="githubURL">
-        GithubURL:
-        <a class="myGithubUrl" href="https://github.com/Shezcute09/Chiemezie-HNG-Task1"
-          >github.com/Shezcute09/Chiemezie-HNG-Task1</a
-        >
+      <p data-testid="myTrack">Front-End Development</p>
+      <p data-testid="githubURL">
+        Click
+        <a href="https://github.com/Shezcute09/Chiemezie-HNG-Task1">here</a> to
+        visit the github source code
       </p>
-    </main>
+    </div>
 
     <script src="index.js"></script>
   </body>
 </html>
-

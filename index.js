@@ -1,28 +1,29 @@
-function updateTimeUTC() {
-    let Current_dayOfweek = document.querySelector(
-      '[data-testId="currentDayOfWeek"]'
-    );
-    let Current_UTCTime = document.querySelector(
-      '[data-testId="currentUTCTime"]'
-    );
+function updateDayAndTime() {
+  const dayOfWeekElement = document.querySelector(
+    '[data-testid= "currentDayOfTheWeek"]'
+  );
+  const currentTimeElement = document.querySelector(
+    '[data-testid="currentUTCTime"]'
+  );
 
-    const current = new Date();
+  const now = new Date();
+  const daysOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const dayOfWeek = daysOfWeek[now.getDay()];
+  const time = now.getTime();
 
-    const days_OfTheWeek = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
+  dayOfWeekElement.textContent = `Today is ${dayOfWeek}`;
+  currentTimeElement.textContent = `Current time is ${time}`;
+}
 
-    const currentDay = days_OfTheWeek[current.getDay()];
-    const timeOfTheDay = current.toLocaleTimeString();
+setInterval(updateDayAndTime, 1000);
 
-    Current_dayOfweek.textContent = `Today is:  ${currentDay}`;
-    Current_UTCTime.textContent = `Current time is:  ${timeOfTheDay}`;
-  }
-  setInterval(updateTimeUTC, 1000);
-  updateTimeUTC();
+// Initial update
+updateDayAndTime();

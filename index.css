@@ -1,15 +1,25 @@
-main {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    width: 100%;
-  }
-
-  .chichiImage {
-    width: 50px;
-  }
-
-  .myGithubUrl {
-    text-decoration: none;
-  }
+body {
+  background: black;
+  color: #ffffff;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+}
+[data-testid="slackDisplayImage"] {
+  width: 50%;
+}
+.clock {
+  display: flex;
+  justify-content: space-around;
+  width: 55%;
+}
+[data-testid="myTrack"] {
+  font-size: 1.5rem;
+}
+[data-testid="githubURL"] {
+  margin-top: 0px;
+}
