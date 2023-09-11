@@ -1,29 +1,22 @@
-function updateDayAndTime() {
-  const dayOfWeekElement = document.querySelector(
-    '[data-testid= "currentDayOfTheWeek"]'
-  );
-  const currentTimeElement = document.querySelector(
-    '[data-testid="currentUTCTime"]'
-  );
-
-  const now = new Date();
-  const daysOfWeek = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  const dayOfWeek = daysOfWeek[now.getDay()];
-  const time = now.getTime();
-
-  dayOfWeekElement.textContent = `Today is ${dayOfWeek}`;
-  currentTimeElement.textContent = `Current time is ${time}`;
+function setDayOfWeek() {
+  const dayOfWeekElement = document.querySelector('[data-testid="currentDayOfTheWeek"]');
+  const currentDate = new Date();
+  const options = { weekday: 'long' };
+  const formattedDayOfWeek = currentDate.toLocaleDateString(undefined, options);
+  dayOfWeekElement.textContent = formattedDayOfWeek;
 }
 
-setInterval(updateDayAndTime, 1000);
+function updateClock() {
+  const timeElement = document.querySelector('[data-testid="currentUTCTime"]');
+  const updateClockDisplay = () => {
+      const currentTimeMillis = new Date().getTime(); // Get the current time in milliseconds (Unix time)
+      timeElement.textContent = currentTimeMillis.toString();
+  };
 
-// Initial update
-updateDayAndTime();
+  updateClockDisplay();
+
+  setInterval(updateClockDisplay, 1);
+}
+
+setDayOfWeek();
+updateClock();

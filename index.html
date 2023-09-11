@@ -3,26 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Front-End Page Task 1</title>
-    <link rel="stylesheet" href="index.css" />
+    <title>HNG Stage One Task | Jadge</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-
   <body>
-    <div class="container">
-      <h1 data-testid="slackUserName">Chiemezie</h1>
-      <img data-testid="slackDisplayImage" src="./chichi.jpg" alt="chiemezie" />
-      <div class="clock">
+    <div class="card">
+      <div class="personal-info">
+        <img src="chichi.jpg" alt="Chiemezie" data-testid="slackDisplayImage" />
+        <div class="info-text">
+          <p data-testid="slackUserName">Chiemezie</p>
+          <span data-testid="myTrack">Frontend</span>
+        </div>
+      </div>
+      <div class="date-time">
         <p data-testid="currentDayOfTheWeek"></p>
         <p data-testid="currentUTCTime"></p>
       </div>
-      <p data-testid="myTrack">Front-End Development</p>
-      <p data-testid="githubURL">
-        Click
-        <a href="https://github.com/Shezcute09/Chiemezie-HNG-Task1">here</a> to
-        visit the github source code
-      </p>
+      <div class="github">
+        <a
+          href="https://github.com/Shezcute09/Chiemezie-HNG-Task1"
+          data-testid="githubURL"
+          >GitHub Repository</a
+        >
+      </div>
     </div>
-
     <script src="index.js"></script>
   </body>
 </html>
